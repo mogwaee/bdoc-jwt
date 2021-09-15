@@ -1,0 +1,18 @@
+### Get JWT for BDP
+#GET localhost:2000/jwt?user=achrist&password=achrist
+#Accept: application/json
+
+#### GET JWT
+POST localhost:2000/jwt
+Content-Type: application/json
+
+{
+  "user": "achrist",
+  "password": "achrist"
+}
+
+
+
+
+
+
