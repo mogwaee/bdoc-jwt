@@ -1,4 +1,5 @@
-require("dotenv").config();
+//* Renamed and added path to .env because it's hidden on a mac.
+require('dotenv').config({ path: 'jwt.env' });
 
 const express = require("express");
 const app = express();
@@ -15,6 +16,9 @@ const nowTime = () => {
 
 console.log(nowTime() + " Server startup...");
 console.log(nowTime() + " Server ready: listening on port 2000.");
+console.log(process.env.AUDIENCE);
+
+
 
 app.post("/jwt", async (req, res) => {
 
@@ -27,9 +31,9 @@ app.post("/jwt", async (req, res) => {
         password: hashedPassword,
     };
 
-    //console.log(user.user)
+    console.log(process.env.USERNAME);
 
-    if ((user.user != process.env.USER)) {
+    if ((user.user != process.env.USERNAME)) {
         console.log("Unknown user");
         return res.status(400).send({error: "Unknown user"});
     }
