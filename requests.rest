@@ -2,14 +2,17 @@
 #GET localhost:2000/jwt?user=achrist&password=achrist
 #Accept: application/json
 
-#### GET JWT
-POST localhost:2000/jwt
+#### GRAB JWT
+POST http://localhost:2000/jwt
 Content-Type: application/json
 
 {
-  "user": "achrist",
+  "username": "achrist",
   "password": "achrist"
 }
+
+#### GRAB JWT with user in params
+POST http://localhost:2000/jwt?username=achrist&password=achrist
 
 
 
