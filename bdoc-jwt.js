@@ -50,7 +50,7 @@ app.post("/jwt", async (req, res) => {
                 iss: process.env.ISSUER,
                 aud: process.env.AUDIENCE,
                 BdocModules: ["BDOC_INTERACTIVE", "BDOC_PRODUCTION"],
-                UserName: user.user,
+                UserName: user.username,
                 Groups: ["GRP1", "GRP2"],
             };
 
